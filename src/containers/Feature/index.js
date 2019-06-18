@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { fetchRecentlyPlayed } from '../../concepts/play-history';
 
 class Feature extends Component {
+  componentDidMount() {
+    this.props.fetchRecentlyPlayed();
+  }
+
   render() {
     return (
       <div>
@@ -10,4 +17,9 @@ class Feature extends Component {
   }
 }
 
-export default Feature;
+const mapDispatchToProps = { fetchRecentlyPlayed };
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Feature);

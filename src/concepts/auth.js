@@ -17,7 +17,6 @@ export const authorizeUser = () => dispatch => {
 
 export const verifyToken = () => dispatch => {
   const accessToken = parseAccessToken();
-
   if (accessToken) {
     localStorage.setItem('token', accessToken);
     dispatch({ type: SET_USER_LOGGED_IN });
