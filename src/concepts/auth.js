@@ -1,5 +1,7 @@
 import config from '../config';
 import queryParametrize from '../services/query-parametrize';
+import parseAccessToken from '../services/auth';
+import history from '../services/history';
 
 export const authorizeUser = () => dispatch => {
   const loginOpts = {
@@ -11,6 +13,18 @@ export const authorizeUser = () => dispatch => {
   const loginUrl = queryParametrize(config.SPOTIFY_AUTHORIZE_URL, loginOpts);
 
   window.location.href = loginUrl;
+};
+
+export const verifyToken = () => dispatch => {
+  const accessToken = parseAccessToken();
+
+  if (accessToken) {
+    localStorage.setItem('token', accessToken);
+    dispatch({ type: SET_USER_LOGGED_IN });
+    history.push('/feature');
+  } else {
+    dispatch({ type: SET_USER_LOGGED_OUT });
+  }
 };
 
 const SET_USER_LOGGED_IN = 'auth/SET_USER_LOGGED_IN';

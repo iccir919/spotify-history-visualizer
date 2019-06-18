@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { authorizeUser } from '../../concepts/auth';
+import { authorizeUser, verifyToken } from '../../concepts/auth';
 
 class Welcome extends Component {
+  componentDidMount() {
+    this.props.verifyToken();
+  }
+
   render() {
+    console.log(this.props);
     return (
       <div>
         <h1>Welcome!</h1>
@@ -14,10 +19,9 @@ class Welcome extends Component {
   }
 }
 
-const mapStateToProps = () => ({});
-const mapDispatchToProps = { authorizeUser };
+const mapDispatchToProps = { authorizeUser, verifyToken };
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(Welcome);

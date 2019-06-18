@@ -1,10 +1,6 @@
-import { last } from 'lodash';
-
 export const parseAccessToken = () => {
-  const url = window.location.href;
-  const urlParts = url.split('#access_token=');
-
-  return last(urlParts);
+  const match = RegExp('[#&]access_token=([^&]*)').exec(window.location.hash);
+  return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 };
 
 export default parseAccessToken;
