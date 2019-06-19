@@ -1,0 +1,66 @@
+#landing-page {
+  height: 100vh;
+  width: 100vw;
+
+  background: linear-gradient(145deg, #ffc867, #f037a6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.25rem 2.5vw;
+}
+
+#landing-page h1 {
+  font-size: 4.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: #1e3264;
+  margin: 0.9375rem 0 1.5625rem 0;
+}
+
+#landing-page h3 {
+  font-style: normal;
+  font-weight: 400;
+  max-width: 80%;
+  text-align: center;
+  color: #1e3264;
+  margin-top: -0.3125rem;
+  padding-bottom: 0.625rem;
+  line-height: 1.55;
+}
+
+.button-rounded {
+  color: #1e3264;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.0625rem;
+  background: #ffffff;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.button-rounded.large {
+  border: solid 3px #ffffff;
+  border-radius: 1.875rem;
+  height: 3.75rem;
+  padding: 0 3.4375rem;
+  background-color: transparent;
+}
+
+.button-rounded.large .text {
+  color: #ffffff;
+  line-height: 3.375rem;
+}
+
+button:focus,
+button:active {
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}

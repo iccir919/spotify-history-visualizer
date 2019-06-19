@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import './Landing.css';
+
 import { authorizeUser, verifyToken } from '../../concepts/auth';
 
 class Welcome extends Component {
@@ -9,11 +11,18 @@ class Welcome extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
-      <div>
-        <h1>Welcome!</h1>
-        <button onClick={this.props.authorizeUser}>Sign in with Spotify</button>
+      <div id="landing-page">
+        <h1>You are what you stream</h1>
+        <h3>Log-in to see experience recent Spotify history</h3>
+        <button
+          style={{ opacity: '1' }}
+          id="login-button"
+          onClick={this.props.authorizeUser}
+          className="button-rounded large"
+        >
+          <div className="text">Get Started</div>
+        </button>
       </div>
     );
   }

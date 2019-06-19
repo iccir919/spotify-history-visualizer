@@ -1,10 +1,7 @@
 import React from 'react';
 
+import './App.css';
+
 export default ({ children }) => {
-  return (
-    <div>
-      <h1>Spotify History Visualizer</h1>
-      {children}
-    </div>
-  );
+  return <div className="app-container">{children}</div>;
 };

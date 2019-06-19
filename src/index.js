@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route } from 'react-router-dom';
@@ -8,7 +9,7 @@ import reduxThunk from 'redux-thunk';
 import history from './services/history';
 import reducers from './concepts';
 import App from './containers/App';
-import Welcome from './containers/Welcome';
+import Landing from './containers/Landing';
 import Feature from './containers/Feature';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -21,7 +22,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <App>
-        <Route path="/" exact component={Welcome} />
+        <Route path="/" exact component={Landing} />
         <Route path="/feature" exact component={Feature} />
       </App>
     </Router>
