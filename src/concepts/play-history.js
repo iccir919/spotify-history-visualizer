@@ -1,6 +1,6 @@
 import spotify from '../services/spotify';
 
-const FETCH_PLAY_HISTORY_SUCCESS = 'FETCH_PLAY_HISTORY';
+const FETCH_PLAY_HISTORY_SUCCESS = 'FETCH_PLAY_HISTORY_SUCCESS';
 
 export const fetchRecentlyPlayed = callback => async dispatch => {
   try {
@@ -9,11 +9,10 @@ export const fetchRecentlyPlayed = callback => async dispatch => {
       headers: { Authorization: `Bearer ${token}` },
       params: { limit: 50 }
     });
-    console.log(response);
-    // dispatch({
-    //   type: FETCH_PLAY_HISTORY_SUCCESS,
-    //   payload: response.data
-    // });
+    dispatch({
+      type: FETCH_PLAY_HISTORY_SUCCESS,
+      payload: response.data.items
+    });
     // callback();
   } catch (e) {
     console.log(e);
@@ -21,13 +20,13 @@ export const fetchRecentlyPlayed = callback => async dispatch => {
 };
 
 const initialState = {
-  history: {}
+  data: {}
 };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case FETCH_PLAY_HISTORY_SUCCESS: {
-      return { ...state, history: action.payload };
+      return { ...state, data: action.payload };
     }
 
     default: {
