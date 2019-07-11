@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/reduxify/precache-manifest.710ca02489ee05bf6d5db437013b6e55.js"
+  "/reduxify/precache-manifest.82ba76c3f4285775e01a588f36b000e9.js"
 );
 
 self.addEventListener('message', (event) => {
