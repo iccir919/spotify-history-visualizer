@@ -31,10 +31,26 @@
 }
 
 .selector-item {
-  font-size: 2rem;
+  font-size: 0.9rem;
+}
+
+.selector-item.nav-link.active {
+  text-decoration: underline !important;
 }
 
 .thumbnail {
   height: 3rem;
   width: 3rem;
+}
+
+@media (min-width: 576px) {
+  .selector-item {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .selector-item {
+    font-size: 2rem;
+  }
 }

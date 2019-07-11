@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {
-  Container,
-  Nav,
-  Row,
-  Col,
-  ListGroup,
-  Image,
-  Spinner
-} from 'react-bootstrap';
+import { Container, Nav, Row, Col } from 'react-bootstrap';
 import { compose } from 'redux';
 
 import { fetchTopArtists } from '../../actions/topArtists';
 import Header from '../../components/Header';
+import ArtistList from '../../components/ArtistList';
 import GenreList from '../../components/GenreList';
 import requireAuth from '../../components/requireAuth';
 
@@ -49,49 +42,6 @@ class TopArtists extends Component {
     }
   }
 
-  renderList() {
-    if (this.props[this.state.timeRange].length === 0) {
-      return (
-        <div className="d-flex align-items-center justify-content-center">
-          <Spinner animation="border" role="status">
-            <span className="sr-only">Loading...</span>
-          </Spinner>
-        </div>
-      );
-    } else {
-      return (
-        <ListGroup variant="flush">
-          {this.props[this.state.timeRange].map((artist, key) => {
-            if (
-              this.state.genreSelection !== 'all genres' &&
-              !artist.genres.includes(this.state.genreSelection)
-            ) {
-              return null;
-            }
-
-            return (
-              <ListGroup.Item>
-                <Container>
-                  <Row>
-                    <Col md={2} xs={1}>
-                      <h5 className="font-weight-bold">{key + 1}</h5>
-                    </Col>
-                    <Col>
-                      <Image className="thumbnail" src={artist.images[2].url} />
-                    </Col>
-                    <Col xs={7}>
-                      <h6 className="align-items-center">{artist.name}</h6>
-                    </Col>
-                  </Row>
-                </Container>
-              </ListGroup.Item>
-            );
-          })}
-        </ListGroup>
-      );
-    }
-  }
-
   render() {
     return (
       <div className="top-artists-page">
@@ -123,10 +73,13 @@ class TopArtists extends Component {
             </Nav.Item>
           </Nav>
           <Row>
-            <Col xs={12} md={{ span: 6, offset: 1 }}>
-              {this.renderList()}
+            <Col md={12} lg={{ span: 6, offset: 1 }}>
+              <ArtistList
+                genreSelection={this.state.genreSelection}
+                artists={this.props[this.state.timeRange]}
+              />
             </Col>
-            <Col md={5}>
+            <Col lg={5}>
               <GenreList
                 changeGenre={this.handleGenreChange.bind(this)}
                 artists={this.props[this.state.timeRange]}

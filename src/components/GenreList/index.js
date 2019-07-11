@@ -31,7 +31,7 @@ const GenreList = props => {
 
   return (
     <div>
-      <h3>Genres</h3>
+      <h3>Browse by Genre</h3>
       <div>
         <Button
           onClick={props.changeGenre}
