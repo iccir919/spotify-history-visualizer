@@ -1,0 +1,40 @@
+.overview-page {
+  background: linear-gradient(145deg, #c3f0c8, #509bf5);
+}
+
+.page-header {
+  text-align: center;
+  color: #1e3264;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.45rem;
+  letter-spacing: -0.03em;
+}
+
+.page-sub-header {
+  margin: 0 auto 1.875rem auto;
+  font-size: 0.875rem;
+  text-align: center;
+  color: #1e3264;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.nav {
+  margin-bottom: 2rem;
+}
+
+.nav-link {
+  color: #1e3264;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.selector-item {
+  font-size: 2rem;
+}
+
+.thumbnail {
+  height: 3rem;
+  width: 3rem;
+}

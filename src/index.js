@@ -1,16 +1,16 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import reduxThunk from 'redux-thunk';
 
-import history from './services/history';
-import reducers from './concepts';
+import reducers from './reducers';
 import App from './containers/App';
 import Landing from './containers/Landing';
-import Feature from './containers/Feature';
+import TopArtists from './containers/TopArtists';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -20,10 +20,10 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={history}>
+    <Router>
       <App>
         <Route path="/" exact component={Landing} />
-        <Route path="/feature" exact component={Feature} />
+        <Route path="/topArtists" exact component={TopArtists} />
       </App>
     </Router>
   </Provider>,

@@ -1,7 +1,8 @@
 import config from '../config';
 import queryParametrize from '../services/query-parametrize';
 import parseAccessToken from '../services/auth';
-import history from '../services/history';
+
+import { AUTH_USER, AUTH_ERROR } from './types';
 
 export const authorizeUser = () => dispatch => {
   const loginOpts = {
@@ -19,30 +20,15 @@ export const verifyToken = () => dispatch => {
   const accessToken = parseAccessToken();
   if (accessToken) {
     localStorage.setItem('token', accessToken);
-    dispatch({ type: SET_USER_LOGGED_IN });
-    history.push('/feature');
-  } else {
-    dispatch({ type: SET_USER_LOGGED_OUT });
+    dispatch({ type: AUTH_USER, payload: accessToken });
   }
 };
 
-const SET_USER_LOGGED_IN = 'auth/SET_USER_LOGGED_IN';
-const SET_USER_LOGGED_OUT = 'auth/SET_USER_LOGGED_OUT';
+export const signOut = () => {
+  localStorage.removeItem('token');
 
-const initialState = {
-  isLoggedIn: false
+  return {
+    type: AUTH_USER,
+    payload: ''
+  };
 };
-
-export default function reducer(state = initialState, action) {
-  switch (action.type) {
-    case SET_USER_LOGGED_IN: {
-      return { ...state, isLoggedIn: true };
-    }
-    case SET_USER_LOGGED_OUT: {
-      return { ...state, isLoggedIn: false };
-    }
-    default: {
-      return state;
-    }
-  }
-}
