@@ -12,8 +12,8 @@ export const authorizeUser = () => dispatch => {
     response_type: 'token'
   };
   const loginUrl = queryParametrize(config.SPOTIFY_AUTHORIZE_URL, loginOpts);
-
-  window.location.href = loginUrl;
+  // eslint-disable-next-line no-restricted-globals
+  location.href = loginUrl;
 };
 
 export const verifyToken = () => dispatch => {

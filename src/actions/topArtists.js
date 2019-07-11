@@ -12,7 +12,6 @@ export const fetchTopArtists = timeRange => async dispatch => {
       headers: { Authorization: `Bearer ${token}` },
       params: { limit: 50, time_range: timeRange }
     });
-    console.log(response);
     if (timeRange === 'long_term') {
       dispatch({
         type: FETCH_TOP_ARTISTS_LONG_TERM,

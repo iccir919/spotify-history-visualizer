@@ -73,13 +73,13 @@ class TopArtists extends Component {
               <ListGroup.Item>
                 <Container>
                   <Row>
-                    <Col>
+                    <Col md={2} xs={1}>
                       <h5 className="font-weight-bold">{key + 1}</h5>
                     </Col>
                     <Col>
                       <Image className="thumbnail" src={artist.images[2].url} />
                     </Col>
-                    <Col xs={8}>
+                    <Col xs={7}>
                       <h6 className="align-items-center">{artist.name}</h6>
                     </Col>
                   </Row>
@@ -123,7 +123,9 @@ class TopArtists extends Component {
             </Nav.Item>
           </Nav>
           <Row>
-            <Col md={{ span: 6, offset: 1 }}>{this.renderList()}</Col>
+            <Col xs={12} md={{ span: 6, offset: 1 }}>
+              {this.renderList()}
+            </Col>
             <Col md={5}>
               <GenreList
                 changeGenre={this.handleGenreChange.bind(this)}

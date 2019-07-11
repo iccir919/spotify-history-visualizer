@@ -20,7 +20,7 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <App>
         <Route path="/" exact component={Landing} />
         <Route path="/topArtists" exact component={TopArtists} />
