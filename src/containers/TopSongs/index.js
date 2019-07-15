@@ -3,45 +3,45 @@ import { connect } from 'react-redux';
 import { Container, Nav, Row, Col } from 'react-bootstrap';
 import { compose } from 'redux';
 
-import { fetchTopArtists } from '../../actions/topArtists';
+import { fetchTopSongs } from '../../actions/topSongs';
 import Header from '../../components/Header';
-import ArtistList from '../../components/ArtistList';
-import GenreChoice from '../../components/GenreChoice';
+import SongList from '../../components/SongList';
+import ArtistChoice from '../../components/ArtistChoice';
 import requireAuth from '../../components/requireAuth';
 
-import './TopArtists.css';
+import './TopSongs.css';
 
-class TopArtists extends Component {
+class TopSongs extends Component {
   state = {
     timeRange: 'long_term',
-    genreSelection: 'all genres'
+    artistSelection: 'all artists'
   };
 
   componentDidMount() {
-    this.props.fetchTopArtists(this.state.timeRange);
+    this.props.fetchTopSongs(this.state.timeRange);
   }
 
-  handleGenreChange(genre) {
+  handleArtistChange(artist) {
     let body = document.body; // For Safari
     let html = document.documentElement; // Chrome, Firefox, IE and Opera
     body.scrollTop = 0;
     html.scrollTop = 0;
     this.setState({
-      genreSelection: genre.currentTarget.value
+      artistSelection: artist.currentTarget.value
     });
   }
 
   handleTimePeriodChange(timeRange) {
     if (this.props[timeRange].length === 0) {
-      this.props.fetchTopArtists(timeRange);
+      this.props.fetchTopSongs(timeRange);
       this.setState({
         timeRange: timeRange,
-        genreSelection: 'all genres'
+        artistSelection: 'all artists'
       });
     } else {
       this.setState({
         timeRange: timeRange,
-        genreSelection: 'all genres'
+        artistSelection: 'all artists'
       });
     }
   }
@@ -50,7 +50,7 @@ class TopArtists extends Component {
     return (
       <div className="top-artists-page">
         <Header />
-        <h1 className="page-header">Top Artists</h1>
+        <h1 className="page-header">Top Songs</h1>
         <h3 className="page-sub-header">
           Get ready to feel cool. Or much less cool than you thought.
         </h3>
@@ -78,15 +78,15 @@ class TopArtists extends Component {
           </Nav>
           <Row>
             <Col md={12} lg={{ span: 6, offset: 1 }}>
-              <ArtistList
-                genreSelection={this.state.genreSelection}
-                artists={this.props[this.state.timeRange]}
+              <SongList
+                artistSelection={this.state.artistSelection}
+                songs={this.props[this.state.timeRange]}
               />
             </Col>
             <Col lg={5}>
-              <GenreChoice
-                changeGenre={this.handleGenreChange.bind(this)}
-                artists={this.props[this.state.timeRange]}
+              <ArtistChoice
+                songs={this.props[this.state.timeRange]}
+                changeArtist={this.handleArtistChange.bind(this)}
               />
             </Col>
           </Row>
@@ -96,13 +96,13 @@ class TopArtists extends Component {
   }
 }
 
-const mapDispatchToProps = { fetchTopArtists };
+const mapDispatchToProps = { fetchTopSongs };
 
 const mapStateToProps = state => {
   return {
-    long_term: state.topArtists.longTerm,
-    medium_term: state.topArtists.mediumTerm,
-    short_term: state.topArtists.shortTerm
+    long_term: state.topSongs.longTerm,
+    medium_term: state.topSongs.mediumTerm,
+    short_term: state.topSongs.shortTerm
   };
 };
 
@@ -112,4 +112,4 @@ export default compose(
     mapDispatchToProps
   ),
   requireAuth
-)(TopArtists);
+)(TopSongs);

@@ -2,7 +2,7 @@ import config from '../config';
 import queryParametrize from '../services/query-parametrize';
 import parseAccessToken from '../services/auth';
 
-import { AUTH_USER, AUTH_ERROR } from './types';
+import { AUTH_USER } from './types';
 
 export const authorizeUser = () => dispatch => {
   const loginOpts = {

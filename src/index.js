@@ -11,6 +11,8 @@ import reducers from './reducers';
 import App from './containers/App';
 import Landing from './containers/Landing';
 import TopArtists from './containers/TopArtists';
+import TopSongs from './containers/TopSongs';
+import RecentlyPlayed from './containers/RecentlyPlayed';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -24,6 +26,8 @@ ReactDOM.render(
       <App>
         <Route path="/" exact component={Landing} />
         <Route path="/topArtists" exact component={TopArtists} />
+        <Route path="/topSongs" exact component={TopSongs} />
+        <Route path="/recentlyPlayed" exact component={RecentlyPlayed} />
       </App>
     </Router>
   </Provider>,

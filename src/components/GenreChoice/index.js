@@ -12,19 +12,17 @@ const GenreList = props => {
       }
     });
   });
-  const mostPopularGenres = [];
+  const genres = [];
 
   for (let genre in genreList) {
-    if (genreList[genre] > 2) {
-      mostPopularGenres.push(genre);
-    }
+    genres.push(genre);
   }
   const buttonGroups = [[]];
 
-  for (let i = 0; i < Math.ceil(mostPopularGenres.length / 2); i++) {
+  for (let i = 0; i < Math.ceil(genres.length / 2); i++) {
     const buttons = [];
     for (let j = 0; j < 2; j++) {
-      buttons.push(mostPopularGenres[i * 2 + j]);
+      buttons.push(genres[i * 2 + j]);
     }
     buttonGroups.push(buttons);
   }

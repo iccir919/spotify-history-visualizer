@@ -34,8 +34,16 @@ class Header extends React.Component {
                       Top Artists
                     </Link>
                   </Nav.Item>
-                  <Nav.Link disabled>Top Songs</Nav.Link>
-                  <Nav.Link disabled>Recent</Nav.Link>
+                  <Nav.Item>
+                    <Link className="nav-link" to="/topSongs">
+                      Top Songs
+                    </Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Link className="nav-link" to="/recentlyPlayed">
+                      Recent
+                    </Link>
+                  </Nav.Item>
                 </Nav>
               </Col>
               <Col md={5}>
