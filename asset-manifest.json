@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/reduxify/static/css/main.02620f06.chunk.css",
-    "main.js": "/reduxify/static/js/main.188f71df.chunk.js",
-    "main.js.map": "/reduxify/static/js/main.188f71df.chunk.js.map",
+    "main.css": "/reduxify/static/css/main.9e60e691.chunk.css",
+    "main.js": "/reduxify/static/js/main.385d3a07.chunk.js",
+    "main.js.map": "/reduxify/static/js/main.385d3a07.chunk.js.map",
     "runtime~main.js": "/reduxify/static/js/runtime~main.de91d61b.js",
     "runtime~main.js.map": "/reduxify/static/js/runtime~main.de91d61b.js.map",
     "static/css/2.6ba2bc4a.chunk.css": "/reduxify/static/css/2.6ba2bc4a.chunk.css",
-    "static/js/2.1a643bdf.chunk.js": "/reduxify/static/js/2.1a643bdf.chunk.js",
-    "static/js/2.1a643bdf.chunk.js.map": "/reduxify/static/js/2.1a643bdf.chunk.js.map",
+    "static/js/2.550384a1.chunk.js": "/reduxify/static/js/2.550384a1.chunk.js",
+    "static/js/2.550384a1.chunk.js.map": "/reduxify/static/js/2.550384a1.chunk.js.map",
     "index.html": "/reduxify/index.html",
-    "precache-manifest.9b3dd61060427072377118a8fa381cf1.js": "/reduxify/precache-manifest.9b3dd61060427072377118a8fa381cf1.js",
+    "precache-manifest.6466101c58ab1aacf4d2866278b06ef5.js": "/reduxify/precache-manifest.6466101c58ab1aacf4d2866278b06ef5.js",
     "service-worker.js": "/reduxify/service-worker.js",
     "static/css/2.6ba2bc4a.chunk.css.map": "/reduxify/static/css/2.6ba2bc4a.chunk.css.map",
-    "static/css/main.02620f06.chunk.css.map": "/reduxify/static/css/main.02620f06.chunk.css.map"
+    "static/css/main.9e60e691.chunk.css.map": "/reduxify/static/css/main.9e60e691.chunk.css.map"
   }
 }
