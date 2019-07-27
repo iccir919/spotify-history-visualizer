@@ -28,18 +28,18 @@ const RecentList = props => {
             <ListGroup.Item>
               <Container>
                 <Row className="justify-content-sm-center">
-                  <Col sm="auto">
+                  <Col xs={2}>
                     <Image
                       className="thumbnail"
                       src={song.track.album.images[2].url}
                     />
                   </Col>
-                  <Col sm="auto">
-                    <h6 className="font-weight-bold">
-                      {moment(song.played_at).format('LLL')}
-                    </h6>
-                    <h6 className="align-items-center">{song.track.name}</h6>
+                  <Col xs={6} className="text-right align-items-center">
+                    <h6>{song.track.name}</h6>
                     <p>{song.track.artists[0].name}</p>
+                  </Col>
+                  <Col className="text-muted" xs={4}>
+                    <p>{moment(song.played_at).format('LLL')}</p>
                   </Col>
                 </Row>
               </Container>

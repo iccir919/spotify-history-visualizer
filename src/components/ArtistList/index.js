@@ -34,13 +34,13 @@ const ArtistList = props => {
               <Container>
                 <Row>
                   <Col md={2} xs={1}>
-                    <h5 className="font-weight-bold">{key + 1}</h5>
+                    <h4 className="font-weight-bold">{key + 1}</h4>
                   </Col>
                   <Col>
                     <Image className="thumbnail" src={artist.images[2].url} />
                   </Col>
                   <Col xs={7}>
-                    <h6 className="align-items-center">{artist.name}</h6>
+                    <h5 className="align-items-center">{artist.name}</h5>
                   </Col>
                 </Row>
               </Container>

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Nav, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { compose } from 'redux';
 
 import { fetchRecentlyPlayed } from '../../actions/recentlyPlayed';
 import Header from '../../components/Header';
 import RecentList from '../../components/RecentList';
+import AudioFeaturesChart from '../../components/AudioFeaturesChart';
 import requireAuth from '../../components/requireAuth';
 
 import './RecentlyPlayed.css';
@@ -24,9 +25,12 @@ class RecentlyPlayed extends Component {
           Get ready to feel cool. Or much less cool than you thought.
         </h3>
         <Container>
-          <Row className="justify-content-md-center">
-            <Col>
+          <Row>
+            <Col md={12} lg={5}>
               <RecentList tracks={this.props.tracks} />
+            </Col>
+            <Col>
+              <AudioFeaturesChart tracks={this.props.tracks} />
             </Col>
           </Row>
         </Container>

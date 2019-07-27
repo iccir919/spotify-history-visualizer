@@ -10,6 +10,7 @@ import ArtistChoice from '../../components/ArtistChoice';
 import requireAuth from '../../components/requireAuth';
 
 import './TopSongs.css';
+import PopularityChart from '../../components/PopularityChart';
 
 class TopSongs extends Component {
   state = {
@@ -47,6 +48,7 @@ class TopSongs extends Component {
   }
 
   render() {
+    console.log(this.props.long_term);
     return (
       <div className="top-artists-page">
         <Header />

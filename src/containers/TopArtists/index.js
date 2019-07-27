@@ -7,6 +7,7 @@ import { fetchTopArtists } from '../../actions/topArtists';
 import Header from '../../components/Header';
 import ArtistList from '../../components/ArtistList';
 import GenreChoice from '../../components/GenreChoice';
+import PopularityChart from '../../components/PopularityChart';
 import requireAuth from '../../components/requireAuth';
 
 import './TopArtists.css';
