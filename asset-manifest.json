@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/reduxify/static/css/main.9e60e691.chunk.css",
-    "main.js": "/reduxify/static/js/main.385d3a07.chunk.js",
-    "main.js.map": "/reduxify/static/js/main.385d3a07.chunk.js.map",
+    "main.js": "/reduxify/static/js/main.e63d3475.chunk.js",
+    "main.js.map": "/reduxify/static/js/main.e63d3475.chunk.js.map",
     "runtime~main.js": "/reduxify/static/js/runtime~main.de91d61b.js",
     "runtime~main.js.map": "/reduxify/static/js/runtime~main.de91d61b.js.map",
     "static/css/2.6ba2bc4a.chunk.css": "/reduxify/static/css/2.6ba2bc4a.chunk.css",
-    "static/js/2.550384a1.chunk.js": "/reduxify/static/js/2.550384a1.chunk.js",
-    "static/js/2.550384a1.chunk.js.map": "/reduxify/static/js/2.550384a1.chunk.js.map",
+    "static/js/2.eddf1f5d.chunk.js": "/reduxify/static/js/2.eddf1f5d.chunk.js",
+    "static/js/2.eddf1f5d.chunk.js.map": "/reduxify/static/js/2.eddf1f5d.chunk.js.map",
     "index.html": "/reduxify/index.html",
-    "precache-manifest.6466101c58ab1aacf4d2866278b06ef5.js": "/reduxify/precache-manifest.6466101c58ab1aacf4d2866278b06ef5.js",
+    "precache-manifest.a401903683bed3e86cce2b4f595b38b8.js": "/reduxify/precache-manifest.a401903683bed3e86cce2b4f595b38b8.js",
     "service-worker.js": "/reduxify/service-worker.js",
     "static/css/2.6ba2bc4a.chunk.css.map": "/reduxify/static/css/2.6ba2bc4a.chunk.css.map",
     "static/css/main.9e60e691.chunk.css.map": "/reduxify/static/css/main.9e60e691.chunk.css.map"
